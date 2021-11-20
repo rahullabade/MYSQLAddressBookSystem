@@ -1,0 +1,19 @@
+#UC1
+
+mysql> CREATE DATABASE Address_Book_Service_database;
+Query OK, 1 row affected (0.23 sec)
+
+mysql> show databases;
++-------------------------------+
+| Database                      |
++-------------------------------+
+| address_book_service_database |
+| information_schema            |
+| mysql                         |
+| payroll_service               |
+| performance_schema            |
+| sys                           |
++-------------------------------+
+6 rows in set (0.06 sec)
+
+mysql>
