@@ -1,75 +1,18 @@
-#UC3
+#UC4
 
-mysql> show databases;
-+-------------------------------+
-| Database                      |
-+-------------------------------+
-| address_book_service_database |
-| information_schema            |
-| mysql                         |
-| payroll_service               |
-| performance_schema            |
-| sys                           |
-+-------------------------------+
-6 rows in set (0.06 sec)
-
-mysql> use address_book_service_database;
-Database changed
-mysql> SELECT DATABASE();
-+-------------------------------+
-| DATABASE()                    |
-+-------------------------------+
-| address_book_service_database |
-+-------------------------------+
-1 row in set (0.00 sec)
-
-
-mysql> CREATE TABLE addressbook
-    -> (
-    ->      firstname          VARCHAR(150) NOT NULL,
-    ->      lastname           VARCHAR(150) NOT NULL,
-    ->      address            VARCHAR(150) NOT NULL,
-    ->      city               VARCHAR(150) NOT NULL,
-    ->      state              VARCHAR(150) NOT NULL,
-    ->      zip                VARCHAR(150) NOT NULL,
-    ->      phonenumber        VARCHAR(150) NOT NULL,
-    ->      email              VARCHAR(150) NOT NULL
-    -> );
-Query OK, 0 rows affected (0.96 sec)
-
-mysql> describe addressbook;
-+-------------+--------------+------+-----+---------+-------+
-| Field       | Type         | Null | Key | Default | Extra |
-+-------------+--------------+------+-----+---------+-------+
-| firstname   | varchar(150) | NO   |     | NULL    |       |
-| lastname    | varchar(150) | NO   |     | NULL    |       |
-| address     | varchar(150) | NO   |     | NULL    |       |
-| city        | varchar(150) | NO   |     | NULL    |       |
-| state       | varchar(150) | NO   |     | NULL    |       |
-| zip         | varchar(150) | NO   |     | NULL    |       |
-| phonenumber | varchar(150) | NO   |     | NULL    |       |
-| email       | varchar(150) | NO   |     | NULL    |       |
-+-------------+--------------+------+-----+---------+-------+
-8 rows in set (0.08 sec)
-
-mysql>
-mysql> INSERT INTO addressbook (firstname, lastname, address, city, state, zip, phonenumber, email) VALUES
-    ->          ('Rahul', 'Labade', 'Shivaji Nagar', 'Amravati', 'Maharashtra', '456123', '7894561230', 'rahul@gmail.com'),
-    ->          ('Altamsh', 'Bagwan', 'Arjun Nagar', 'Satara', 'Maharashtra', '456123', '98765463112', 'altamash@gmail.com'),
-    ->          ('Salman', 'Pasha', 'Shyam Nagar', 'Bangluru', 'Karnataka', '654789', '8529637410', 'salman@gmail.com'),
-    ->          ('Shailesh', 'Dubey', 'Bhuj nagar', 'Patna', 'Uttar Pradesh', '753951', '9510423678', 'shailesh@gmail.com');
-Query OK, 4 rows affected (0.29 sec)
-Records: 4  Duplicates: 0  Warnings: 0
+mysql> update addressbook set firstname ='Mangesh', lastname ='Labade', address ='Shivaji Nagar', city ='Amravati', state ='Maharashtra', zip ='456123', phonenumber ='7894561230', email ='rahul@gmail.com' WHERE firstname ='Rahul';
+Query OK, 1 row affected (0.12 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
 
 mysql> SELECT * FROM addressbook;
 +-----------+----------+---------------+----------+---------------+--------+-------------+--------------------+
 | firstname | lastname | address       | city     | state         | zip    | phonenumber | email              |
 +-----------+----------+---------------+----------+---------------+--------+-------------+--------------------+
-| Rahul     | Labade   | Shivaji Nagar | Amravati | Maharashtra   | 456123 | 7894561230  | rahul@gmail.com    |
+| Mangesh   | Labade   | Shivaji Nagar | Amravati | Maharashtra   | 456123 | 7894561230  | rahul@gmail.com    |
 | Altamsh   | Bagwan   | Arjun Nagar   | Satara   | Maharashtra   | 456123 | 98765463112 | altamash@gmail.com |
 | Salman    | Pasha    | Shyam Nagar   | Bangluru | Karnataka     | 654789 | 8529637410  | salman@gmail.com   |
 | Shailesh  | Dubey    | Bhuj nagar    | Patna    | Uttar Pradesh | 753951 | 9510423678  | shailesh@gmail.com |
 +-----------+----------+---------------+----------+---------------+--------+-------------+--------------------+
-4 rows in set (0.00 sec)
+4 rows in set (0.04 sec)
 
 mysql>
