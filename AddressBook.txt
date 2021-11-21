@@ -1,12 +1,11 @@
-#UC6
+#UC7
 
-mysql> SELECT * FROM addressbook WHERE city ='Amravati' or state ='Maharashtra';
-+-----------+----------+---------------+----------+-------------+--------+-------------+--------------------+
-| firstname | lastname | address       | city     | state       | zip    | phonenumber | email              |
-+-----------+----------+---------------+----------+-------------+--------+-------------+--------------------+
-| Mangesh   | Labade   | Shivaji Nagar | Amravati | Maharashtra | 456123 | 7894561230  | rahul@gmail.com    |
-| Altamsh   | Bagwan   | Arjun Nagar   | Satara   | Maharashtra | 456123 | 98765463112 | altamash@gmail.com |
-+-----------+----------+---------------+----------+-------------+--------+-------------+--------------------+
-2 rows in set (0.05 sec)
+mysql> SELECT COUNT(*) FROM addressbook WHERE city ='Satara' or state ='Maharashtra';
++----------+
+| COUNT(*) |
++----------+
+|        2 |
++----------+
+1 row in set (0.10 sec)
 
 mysql>
