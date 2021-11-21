@@ -1,4 +1,7 @@
-#UC10
+#UC11
+
+mysql> INSERT INTO addressbook (firstname,lastname,name,type,address,city,state,zip,phonenumber,email) VALUES('vikas','yewle','Addressbook2','Friends','Bus Stop','nagpur','Maharashtra','951236','789456432','vikas@gmail.com');
+Query OK, 1 row affected (0.21 sec)
 
 mysql> SELECT * FROM addressbook;
 +-----------+----------+--------------+---------+---------------+----------+---------------+--------+-------------+--------------------+
@@ -7,15 +10,8 @@ mysql> SELECT * FROM addressbook;
 | Mangesh   | Labade   | Addressbook1 | Family  | Shivaji Nagar | Amravati | Maharashtra   | 456123 | 7894561230  | rahul@gmail.com    |
 | Altamsh   | Bagwan   | Addressbook1 | Family  | Arjun Nagar   | Satara   | Maharashtra   | 456123 | 98765463112 | altamash@gmail.com |
 | Shailesh  | Dubey    | Addressbook2 | Friends | Bhuj nagar    | Patna    | Uttar Pradesh | 753951 | 9510423678  | shailesh@gmail.com |
+| vikas     | yewle    | Addressbook2 | Friends | Bus Stop      | nagpur   | Maharashtra   | 951236 | 789456432   | vikas@gmail.com    |
 +-----------+----------+--------------+---------+---------------+----------+---------------+--------+-------------+--------------------+
-3 rows in set (0.00 sec)
-
-mysql> SELECT count(*) from addressbook WHERE type ='Friends';
-+----------+
-| count(*) |
-+----------+
-|        1 |
-+----------+
-1 row in set (0.00 sec)
+4 rows in set (0.04 sec)
 
 mysql>
