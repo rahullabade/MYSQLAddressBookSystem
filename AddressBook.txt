@@ -1,11 +1,13 @@
-#UC7
+#UC8
 
-mysql> SELECT COUNT(*) FROM addressbook WHERE city ='Satara' or state ='Maharashtra';
+mysql> SELECT city FROM addressbook ORDER by firstname;
 +----------+
-| COUNT(*) |
+| city     |
 +----------+
-|        2 |
+| Satara   |
+| Amravati |
+| Patna    |
 +----------+
-1 row in set (0.10 sec)
+3 rows in set (0.07 sec)
 
 mysql>
