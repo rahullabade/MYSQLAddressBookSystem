@@ -1,8 +1,4 @@
-#UC4
-
-mysql> update addressbook set firstname ='Mangesh', lastname ='Labade', address ='Shivaji Nagar', city ='Amravati', state ='Maharashtra', zip ='456123', phonenumber ='7894561230', email ='rahul@gmail.com' WHERE firstname ='Rahul';
-Query OK, 1 row affected (0.12 sec)
-Rows matched: 1  Changed: 1  Warnings: 0
+#UC5
 
 mysql> SELECT * FROM addressbook;
 +-----------+----------+---------------+----------+---------------+--------+-------------+--------------------+
@@ -14,5 +10,18 @@ mysql> SELECT * FROM addressbook;
 | Shailesh  | Dubey    | Bhuj nagar    | Patna    | Uttar Pradesh | 753951 | 9510423678  | shailesh@gmail.com |
 +-----------+----------+---------------+----------+---------------+--------+-------------+--------------------+
 4 rows in set (0.04 sec)
+
+mysql> DELETE FROM addressbook WHERE firstname ='Salman';
+Query OK, 1 row affected (0.12 sec)
+
+mysql> SELECT * FROM addressbook;
++-----------+----------+---------------+----------+---------------+--------+-------------+--------------------+
+| firstname | lastname | address       | city     | state         | zip    | phonenumber | email              |
++-----------+----------+---------------+----------+---------------+--------+-------------+--------------------+
+| Mangesh   | Labade   | Shivaji Nagar | Amravati | Maharashtra   | 456123 | 7894561230  | rahul@gmail.com    |
+| Altamsh   | Bagwan   | Arjun Nagar   | Satara   | Maharashtra   | 456123 | 98765463112 | altamash@gmail.com |
+| Shailesh  | Dubey    | Bhuj nagar    | Patna    | Uttar Pradesh | 753951 | 9510423678  | shailesh@gmail.com |
++-----------+----------+---------------+----------+---------------+--------+-------------+--------------------+
+3 rows in set (0.06 sec)
 
 mysql>
