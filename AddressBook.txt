@@ -1,13 +1,47 @@
-#UC8
+#UC9
 
-mysql> SELECT city FROM addressbook ORDER by firstname;
-+----------+
-| city     |
-+----------+
-| Satara   |
-| Amravati |
-| Patna    |
-+----------+
-3 rows in set (0.07 sec)
+mysql> ALTER TABLE addressbook ADD type CHAR(50) AFTER lastname;
+Query OK, 0 rows affected (2.18 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE addressbook ADD name CHAR(50) AFTER lastname;
+Query OK, 0 rows affected (0.86 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM addressbook;
++-----------+----------+------+------+---------------+----------+---------------+--------+-------------+--------------------+
+| firstname | lastname | name | type | address       | city     | state         | zip    | phonenumber | email              |
++-----------+----------+------+------+---------------+----------+---------------+--------+-------------+--------------------+
+| Mangesh   | Labade   | NULL | NULL | Shivaji Nagar | Amravati | Maharashtra   | 456123 | 7894561230  | rahul@gmail.com    |
+| Altamsh   | Bagwan   | NULL | NULL | Arjun Nagar   | Satara   | Maharashtra   | 456123 | 98765463112 | altamash@gmail.com |
+| Shailesh  | Dubey    | NULL | NULL | Bhuj nagar    | Patna    | Uttar Pradesh | 753951 | 9510423678  | shailesh@gmail.com |
++-----------+----------+------+------+---------------+----------+---------------+--------+-------------+--------------------+
+3 rows in set (0.00 sec)
+
+mysql> update addressbook set name ='Addressbook1' WHERE firstname ='Mangesh' or firstname ='Altamsh';
+Query OK, 2 rows affected (0.07 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> update addressbook set name ='Addressbook2' WHERE firstname ='Shailesh';
+Query OK, 1 row affected (0.10 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update addressbook set type ='Friends' WHERE firstname ='Shailesh';
+Query OK, 1 row affected (0.07 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update addressbook set type ='Family' WHERE firstname ='Mangesh'or firstname ='Altamsh';
+Query OK, 2 rows affected (0.09 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> SELECT * FROM addressbook;
++-----------+----------+--------------+---------+---------------+----------+---------------+--------+-------------+--------------------+
+| firstname | lastname | name         | type    | address       | city     | state         | zip    | phonenumber | email              |
++-----------+----------+--------------+---------+---------------+----------+---------------+--------+-------------+--------------------+
+| Mangesh   | Labade   | Addressbook1 | Family  | Shivaji Nagar | Amravati | Maharashtra   | 456123 | 7894561230  | rahul@gmail.com    |
+| Altamsh   | Bagwan   | Addressbook1 | Family  | Arjun Nagar   | Satara   | Maharashtra   | 456123 | 98765463112 | altamash@gmail.com |
+| Shailesh  | Dubey    | Addressbook2 | Friends | Bhuj nagar    | Patna    | Uttar Pradesh | 753951 | 9510423678  | shailesh@gmail.com |
++-----------+----------+--------------+---------+---------------+----------+---------------+--------+-------------+--------------------+
+3 rows in set (0.00 sec)
 
 mysql>
